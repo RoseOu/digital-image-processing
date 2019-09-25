@@ -3,7 +3,7 @@
 ```
 $ python scaling.py
 ```
-注意：需要下载pillow和numpy，代码在  
+注意：需要下载pillow和numpy，代码在scaling.py文件。ScalingResult文件夹为部分运行结果。
 
 ## 二、双线性插值
 ### 1. 线性插值   
