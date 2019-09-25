@@ -3,7 +3,7 @@
 ```
 $ python scaling.py
 ```
-注意：需要下载pillow和numpy   
+注意：需要下载pillow和numpy，代码在  
 
 ## 二、双线性插值
 1. 线性插值   
@@ -38,14 +38,14 @@ v=y0-y1
 ```
 3. 双线性插值的公式推导   
 在找到离点(x0,y0)最近的四个点后，他们在图像中的位置如下图所示。   
-<img src="adjacent.png"/>
+<img src="pic/adjacent.png", width=200px/>
 设点(x0,y0)的值为f(x0,y0)。双线性插值的概念，即在x轴和y轴方向分别作一次线性插值。据此，先在x轴方向进行线性插值，得到：   
-<img src="x0y1.png"/>
-<img src="x0y2.png"/>
+<img src="pic/x0y1.png"/>
+<img src="pic/x0y2.png"/>
 然后根据点(x0,y1)和点(x0,y1+1)在y轴方向上进行插值，得到：   
-<img src="x0y0.png"/>
+<img src="pic/x0y0.png"/>
 展开得公式得：    
-<img src="x0y0more.png"/>
+<img src="pic/x0y0more.png"/>
 最后，设x0-x1=u,y0-y1=v,化简公式得：    
-<img src="x0y0simple.png"/>
+<img src="pic/x0y0simple.png"/>
 
