@@ -38,7 +38,7 @@ v=y0-y1
 ```
 ### 3. 双线性插值的公式推导   
 在找到离点(x0,y0)最近的四个点后，他们在图像中的位置如下图所示。   
-<img src="pic/adjacent.png" width=20% height=20%/>
+<img src="pic/adjacent.png" width=60% height=60%/>   
 设点(x0,y0)的值为f(x0,y0)。双线性插值的概念，即在x轴和y轴方向分别作一次线性插值。据此，先在x轴方向进行线性插值，得到：   
 <img src="pic/x0y1.png"/>
 <img src="pic/x0y2.png"/>
