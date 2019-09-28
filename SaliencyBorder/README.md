@@ -58,4 +58,11 @@ https://blog.csdn.net/u014737138/article/details/80379309
 https://blog.csdn.net/whl970831/article/details/99706730    
 https://blog.csdn.net/fly108108/article/details/81104330#4%E3%80%81%C2%A0%E8%BF%AD%E4%BB%A3%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2   
 https://blog.csdn.net/cp32212116/article/details/44487913   
-https://blog.csdn.net/bravebean/article/details/51374066    
+https://blog.csdn.net/bravebean/article/details/51374066 
+
+## 三、根据二值化后的图像得到显著性区域的包围矩形及其坐标
+使用cv2.boundingRect()方法即可。   
+https://www.cnblogs.com/mrfri/p/8550328.html   
+
+## 四、裁剪图像得到原图像的显著性区域
+根据获得的包围矩形坐标，利用矩形的索引即可。
