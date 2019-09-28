@@ -1,5 +1,9 @@
 # 提取图像显著性区域
 ## 一、图像显著性检测
+这里使用的方法来自以下论文。
+[1] Zhu W, Liang S, Wei Y, et al. Saliency Optimization from Robust Background Detec- tion[C].//Computer Vision and Pattern Recognition. Columbus, OH, USA:IEEE, 2014:2814- 2821
+
+
 
 ## 二、图像二值化
 图像的二值化，就是将图像上的像素点的灰度值设置为0或255，使整个图像呈现出只有黑色和白色的视觉效果。我们可以通过设置一个阈值，判断图像的像素点的灰度值大于阈值还是小于阈值，从而判断将其设置为255还是0。那么这个阈值的设置就尤为重要。   
