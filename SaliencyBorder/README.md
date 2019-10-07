@@ -126,5 +126,14 @@ https://www.cnblogs.com/mrfri/p/8550328.html
 ## 四、裁剪图像得到原图像的显著性区域
 根据获得的包围矩形坐标，利用矩形的索引即可。
 结果：   
-<img src="img/cut.png" width=75% height=75%/>     
+<img src="img/cut.png" width=75% height=75%/>  
+
+### 其他关于图像显著性检测的算法的资料
+https://blog.csdn.net/xioamoon/article/details/80817236    
+https://www.jianshu.com/p/1be50bd846ed     
+https://blog.csdn.net/SoaringLee_fighting/article/details/90348649     
+https://blog.csdn.net/weixin_30569153/article/details/99385262     
+https://blog.csdn.net/u010736662/article/details/85099853     
+https://www.jianshu.com/p/11dbd7add4b4     
+https://www.cnblogs.com/ariel-dreamland/p/8919541.html    
 
