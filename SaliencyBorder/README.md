@@ -1,4 +1,7 @@
 # 提取图像显著性区域
+实现的效果如下：
+<img src="img/result.png" width=50% height=50%/>  
+
 ## 一、图像显著性检测
 这里使用的方法来自以下论文。   
 [1] Zhu W, Liang S, Wei Y, et al. Saliency Optimization from Robust Background Detec- tion[C].//Computer Vision and Pattern Recognition. Columbus, OH, USA:IEEE, 2014:2814- 2821
@@ -38,11 +41,21 @@
 	文章引入背景概率wbgi作为一个新的加权项来扩展式（6）。使用超像素块pi的边界连通度来值映射出概率wbgi。当边界连接性较大时，它接近于1；当边界连接性较小时，它接近于0。定义是   
 <img src="img/wbgi.png" />     
   增强的对比度，称为背景加权对比度，定义为    
-<img src="img/wctr.png" />    
+<img src="img/wctr.png" />   
+
+### 4、结果对比
+  文章将其他论文的算法与本文的算法进行对比，包括SF、MR、GS算法。   
+<img src="img/xianzhu.png" width=45% height=45%/> 
 
 以上，为论文中的显著性检测的算法。   
 下载了论文的代码，发现它是MATLAB和CPP混编的，而且代码比较久远，其中有许多问题，我一个个debug，最后还是跑了起来，最后得到的结果。    
-得到经过图像显著性检测的灰度图以后，需要进行图像二值化。     
+得到经过图像显著性检测的灰度图以后，需要进行图像二值化。 
+
+### 5、关于论文的参考资料：  
+https://blog.csdn.net/yxz3024/article/details/79913449    
+https://blog.csdn.net/dayenglish/article/details/51275128#commentsedit    
+https://www.cnblogs.com/ariel-dreamland/p/9282905.html    
+https://blog.csdn.net/zhangwenjuan1995/article/details/95043177     
 
 ## 二、图像二值化
 图像的二值化，就是将图像上的像素点的灰度值设置为0或255，使整个图像呈现出只有黑色和白色的视觉效果。我们可以通过设置一个阈值，判断图像的像素点的灰度值大于阈值还是小于阈值，从而判断将其设置为255还是0。那么这个阈值的设置就尤为重要。   
@@ -56,7 +69,7 @@
 
 #### （2）双峰法
 原理：把图像看作由前景和背景组成，在灰度直方图上，前景和背景都形成一个高峰，在双峰之间的最低谷处就是图像的阈值所在。假如一张图像的直方图如下所示：
-<img src="img/histogram.png" width=70% height=70%/>     
+<img src="img/histogram.png" width=60% height=60%/>     
 从图中我们可以看到有两个顶峰，将顶峰记为H1和H2，他们对应的灰度值分别为T1和T2，那么双峰法的思想就是要找到图像两个顶峰之间的最低值作为阈值。简单来说就是，在一张图像中，灰度值为T1和T2的像素点是最多的，在[T1,T2]的灰度值范围之间，像素点最少的灰度值，就是阈值。    
 优点：该方法适用于直方图有两个顶峰的图像，即背景与前景颜色差别较大的图像。    
 缺点：不适合直方图曲线平坦或者只有一个顶峰的图像。    
@@ -88,7 +101,7 @@ otsu的公式推导：记t为前景与背景的分割阈值，前景点数占图
 缺点：计算较为复杂。   
 
 ### 3、几种方法的效果
-
+<img src="img/yuzhi.png" width=40% height=40%/>  
 
 ### 4、关于图像二值化的参考资料：
 https://blog.csdn.net/u011600592/article/details/75044250   
@@ -105,7 +118,13 @@ https://blog.csdn.net/bravebean/article/details/51374066
 
 ## 三、根据二值化后的图像得到显著性区域的包围矩形及其坐标
 使用cv2.boundingRect()方法即可。   
+结果：   
+<img src="img/rect.png" width=40% height=40%/>      
+资料：   
 https://www.cnblogs.com/mrfri/p/8550328.html   
 
 ## 四、裁剪图像得到原图像的显著性区域
 根据获得的包围矩形坐标，利用矩形的索引即可。
+结果：   
+<img src="img/cut.png" width=40% height=40%/>     
+
