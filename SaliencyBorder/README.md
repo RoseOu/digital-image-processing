@@ -12,7 +12,7 @@
 ### 2、边界连接度
 #### （1）定义
   从下图可以观察到，在空间布局上，目标区域与图像边界的连接要比背景区域与图像边界的连接少得多。图像由四个区域组成，从人类的感知来看，绿色区域明显是一个显著目标，因为它更大、更紧凑，而且只略微接触到图像边界。蓝色和白色区域显然是背景，因为它们明显地接触到图像边界。粉红色区域只略微地接触到图像边界，但由于它的大小也很小，看起来更像是一个部分裁剪的对象，因此不是一个显著目标。   
-<img src="img/eximg.png" />   
+<img src="img/eximg.png" width=90% height=90%/>   
   于是，文章提出了一种量化某个区域R与图像边界的连接程度的方法，称为边界连接度。它被定义为   
 <img src="img/bndcon.png" />    
    其中Bnd是图像边界块的集合，p是图像块。   
@@ -45,7 +45,7 @@
 
 ### 4、结果对比
   文章将其他论文的算法与本文的算法进行对比，包括SF、MR、GS算法。    
-<img src="img/xianzhu.png" width=55% height=55%/> 
+<img src="img/xianzhu.png" width=75% height=75%/> 
 
 以上，为论文中的显著性检测的算法。   
 下载了论文的代码，发现它是MATLAB和CPP混编的，而且代码比较久远，其中有许多问题，我一个个debug，最后还是跑了起来，最后得到的结果。    
@@ -101,7 +101,7 @@ otsu的公式推导：记t为前景与背景的分割阈值，前景点数占图
 缺点：计算较为复杂。   
 
 ### 3、几种方法的效果
-<img src="img/yuzhi.png" width=55% height=55%/>  
+<img src="img/yuzhi.png" width=75% height=75%/>  
 
 ### 4、关于图像二值化的参考资料：
 https://blog.csdn.net/u011600592/article/details/75044250   
@@ -119,12 +119,12 @@ https://blog.csdn.net/bravebean/article/details/51374066
 ## 三、根据二值化后的图像得到显著性区域的包围矩形及其坐标
 使用cv2.boundingRect()方法即可。   
 结果：   
-<img src="img/rect.png" width=55% height=55%/>      
+<img src="img/rect.png" width=75% height=75%/>      
 资料：   
 https://www.cnblogs.com/mrfri/p/8550328.html   
 
 ## 四、裁剪图像得到原图像的显著性区域
 根据获得的包围矩形坐标，利用矩形的索引即可。
 结果：   
-<img src="img/cut.png" width=55% height=55%/>     
+<img src="img/cut.png" width=75% height=75%/>     
 
